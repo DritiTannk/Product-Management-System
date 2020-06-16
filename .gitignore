@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+
+.idea/*
+
+Pipfile.lock
+
+ProductManagementSystem/ProductManagementSystem/settings/local.py
+
+ProductManagementSystem/db.sqlite3
+
