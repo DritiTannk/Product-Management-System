@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block page_content %}
+
+  <!-- Page Content -->
+  <div class="container">
+
+     <div class="text-center mt-3">
+        <h1> Welcome, {{ request.user }} </h1>
+      </div>
+
+    <div class="row">
+
+      <div class="col-lg-3">
+
+          <a href="#" class="list-group-item"> Product List </a>
+          <a href="#" class="list-group-item"> Add Product </a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock page_content %}
