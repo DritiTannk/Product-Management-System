@@ -2,7 +2,8 @@
 
 {% block page_content %}
 
-  <!-- Page Content -->
+ <!-- Page Content -->
+
   <div class="container">
 
      <div class="text-center mt-3">
@@ -11,15 +12,42 @@
 
     <div class="row">
 
-      <div class="col-lg-3">
+      <div class="col-lg-3 mt-5">
 
-          <a href="#" class="list-group-item"> Product List </a>
-          <a href="#" class="list-group-item"> Add Product </a>
+          <a href="{% url 'product_list' %}" class="list-group-item"> Product List </a>
+          <a href="{% url 'add_product'%}" class="list-group-item"> Add Product </a>
         </div>
 
-      </div>
+        {% if message %}
+             {% if danger %}
+               <div class="alert alert-danger mt-3" role="alert">
+                      <p style="text-align: center;">{{message}}</p>
+                </div>
+
+            {% else %}
+               <div class="toast text-center mt-5  ml-5 border border-secondary rounded" data-animation="true" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
+                <div class="toast-header">
+                  <strong class="mr-auto text-dark text-center font-weight-normal">Message</strong>
+                  <button type="button" class="ml-2 mb-1 close" data-dismiss="toast">&times;</button>
+                </div>
+                <div class="toast-body text-success font-weight-dark">
+                  {{message}}
+                </div>
+              </div>
+            {% endif %}
+        {% endif %}
 
     </div>
+
   </div>
+
+{% block extra_js %}
+    <script>
+$(document).ready(function(){
+  $('.toast').toast('show');
+});
+</script>
+{% endblock extra_js%}
+
 
 {% endblock page_content %}
