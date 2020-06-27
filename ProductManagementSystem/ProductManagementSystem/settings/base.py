@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -130,3 +131,5 @@ ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True  # To logout user after changing the pa
 ACCOUNT_LOGOUT_REDIRECT_URl = '/'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "none"  # To verify email at the time of signup.
+
+CRISPY_TEMPLATE_PACK = 'uni_form'
