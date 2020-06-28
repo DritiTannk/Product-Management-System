@@ -17,6 +17,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 PROJECT_ROOT = os.path.dirname(BASE_DIR)
 
+# Configuration  for uploading product images.
+
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'media')
+MEDIA_URL = '/media/'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -29,7 +34,7 @@ INSTALLED_APPS = [
     'django.contrib.sites',
 
     # Project Apps
-    'Product',
+    'product',
 
     # third party apps
     'allauth',

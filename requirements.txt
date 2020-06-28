@@ -3,3 +3,4 @@ django==2.2.12
 django-allauth
 django-crispy-forms
 psycopg2
+pillow

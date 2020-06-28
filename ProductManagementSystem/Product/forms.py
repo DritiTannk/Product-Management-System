@@ -8,7 +8,7 @@ from .models import Product,ProductCategory
 class AddProductForm(ModelForm) :
     class Meta :
         model = Product
-        fields = ['productName','category','price','quantity','shortDescription','longDescription']
+        fields = ['productName','category','price','quantity','shortDescription','longDescription','smallImage','largeImage']
 
 
     def clean(self) :

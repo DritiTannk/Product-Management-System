@@ -8,8 +8,8 @@
 <div class="container">
     <div class="row mt-3 ">
         <div class="col-lg-6 mx-auto text-center">
-             <h1> Product List </h1>
-          {% if message %}
+             <h1> Delete Product </h1>
+                 {% if message %}
              {% if danger %}
                 <div class="toast text-center mt-5 mx-auto border border-secondary rounded" data-animation="true" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                 <div class="toast-header">
@@ -20,7 +20,7 @@
                   {{message}}
                 </div>
               </div>
-             {% else %}
+            {% else %}
                <div class="toast text-center mt-5  ml-5 border border-secondary rounded" data-animation="true" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
                 <div class="toast-header">
                   <strong class="mr-auto text-dark text-center font-weight-normal">Message</strong>
@@ -31,38 +31,47 @@
 
                 </div>
               </div>
+
             {% endif %}
         {% endif %}
         </div>
     </div>
-    <div class="row mt-3">
+
+     <div class="row mt-3">
+
           <table class="table">
-           <thead class="thead-dark" >
+
             <tr>
-            <th scope="col"> Product Name</th>
-            <th scope="col"> Product Category </th>
-            <th scope="col">Price</th>
-            <th scope="col">Small Image</th>
-            <th scope="col">Short Description</th>
-            <th scope="col"></th>
-            <th scope="col"></th>
+                <td> Product Name</td>
+                <td> {{ item.productName }} </td>
             </tr>
-        </thead>
-        <tbody class = "text-secondary font-weight-normal">
-            {% for item in list %}
-                <tr>
-                    <th>{{item.productName}}</th>
-                    <th>{{item.category}}</th>
-                    <th>{{item.price}}</th>
-                    <th> <img src="{{ item.smallImage.url }}" class="img-responsive" style="height:50px;width:50px" /> </th>
-                    <th>{{item.shortDescription}}</th>
-                    <th> <a href="{% url 'edit_product' item.id %}" class="btn btn-outline-dark"> Edit </a> </th>
-                    <th> <a href="{% url 'delete_product' item.id %}" class="btn btn-outline-dark"> Delete </a> </th>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-        </div>
+            <tr>
+                <td> Product Category </td>
+                <td> {{ item.category }} </td>
+            </tr>
+            <tr>
+                <td> Product Price </td>
+                <td> {{item.price}} </td>
+            </tr>
+            <tr>
+                <td> Small Image </td>
+                <td> coming soon </td>
+            </tr>
+            <tr>
+                <td> Short Description </td>
+                <td>{{item.shortDescription}}</td>
+            </tr>
+
+             <tr>
+                 <td colspan="2" class = "text-center">
+                     <form method="post">
+                         {% csrf_token %}
+                         <button type="submit" class="btn btn-outline-secondary"> Confirm Delete</button>
+                     </form>
+                 </td>
+             </tr>
+        </table>
+
     </div>
 </div>
 
