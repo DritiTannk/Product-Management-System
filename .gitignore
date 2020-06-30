@@ -8,4 +8,4 @@ Pipfile.lock
 ProductManagementSystem/ProductManagementSystem/settings/local.py
 
 ProductManagementSystem/db.sqlite3
-
+ProductManagementSystem/media/*

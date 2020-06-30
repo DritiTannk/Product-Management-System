@@ -53,6 +53,11 @@
     {% endblock page_js%}
 
     {% block extra_js%}
+       <script>
+        $(document).ready(function(){
+          $('.toast').toast('show');
+        });
+        </script>
     {% endblock extra_js%}
 </body>
 
